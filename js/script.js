@@ -1,27 +1,14 @@
-console.log("Hello world!");
-
-// Not very necessary but it well not harm the website
-const myName = "Jonas Schmedtmann";
-const h1 = document.querySelector(".heading-primary");
-console.log(myName);
-console.log(h1);
-
-// This code for making the year up to date
+'use strict'
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 console.log(currentYear);
 yearEl.textContent = currentYear;
-///////////////////////////////////////////////////////////
-// This code for making the mobile navigation work
 
 const btnNavEL = document.querySelector(".btn-mobile-nav");
 const headerEL = document.querySelector(".header");
 btnNavEL.addEventListener("click", function () {
   headerEL.classList.toggle("nav-open");
 });
-
-///////////////////////////////////////////////////////////
-// This code for making the Scrolling smooth
 
 const allLinks = document.querySelectorAll("a:link");
 
@@ -30,15 +17,12 @@ allLinks.forEach(function (link) {
     e.preventDefault();
     const href = link.getAttribute("href");
 
-    // this code is for scrolling back to top
-
     if (href === "#")
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
 
-    // this code is for Scroll to other links
 
     if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
@@ -51,8 +35,7 @@ allLinks.forEach(function (link) {
   });
 });
 
-///////////////////////////////////////////////////////////
-// this code is for scrolling Sticky navigation
+
 const sectionHeroEl = document.querySelector(".section-hero");
 
 const obs = new IntersectionObserver(
